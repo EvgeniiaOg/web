@@ -1,0 +1,203 @@
+$color1: #daf7fa;
+$top1: 180px;
+$top2: 0px;
+$height2: 180px;
+$animation: 8s;
+$tilt1: rotate(-15deg);
+$tilt2: rotate(-90deg);
+
+
+@mixin cangra($height1) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: $height1;
+  background-color: $color1;
+} 
+
+.canvas { @include cangra(470px); }
+.grass { @include cangra(170px); }
+
+.trava {
+	margin-top: -200px;
+	width: 200px;
+    animation-name: rotation;
+    animation-duration: @animation+7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.bratru {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+
+.trunk {
+  @extend .bratru;
+  position: relative;
+  width: 10px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.branch {
+  @extend .bratru;
+  position: absolute;
+  transform-origin: bottom center;
+  width: 5px;
+}
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+
+.branch:nth-child(1) {
+  top: $top;
+  height: $height2;
+}
+.branch:nth-child(2) {
+  top: $top - 30px;
+  height: $height2 - 20 px;
+}
+.branch:nth-child(3) {
+  top: $top - 50px;
+  height: $height2 - 40px;
+}
+.branch:nth-child(4) {
+  top: $top - 80px;
+  height: $height2 - 60px;
+}
+.branch:nth-child(5) {
+  top: $top - 110px;
+  height: $height2 - 70px;
+}
+.branch:nth-child(6) {
+  top: $top - 160px;
+  height: $height2 - 70px;
+}
+.branch:nth-child(7) {
+  top: $top - 200px;
+  height: $height2 - 80px;
+}
+.branch:nth-child(8) {
+  top: $top - 200px;
+  height: $height2 - 110px;
+}
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #77ed9e, #53ad71);
+}
+.leaf:nth-child(1) {
+  top: $top2;
+  animation-delay: $animation;
+}
+.leaf:nth-child(2) {
+  top: $top2+10px;
+  animation-delay: $animation-0.5s;
+}
+.leaf:nth-child(3) {
+top: $top2+20px;
+animation-delay: $animation-1s;
+}
+.leaf:nth-child(4) {
+  top: $top2+30px;
+  animation-delay: $animation-1.5s;
+}
+.leaf:nth-child(5) {
+  top: $top2+40px;
+  animation-delay: $animation-2s;
+}
+.leaf:nth-child(6) {
+  top: $top2+50px;
+  animation-delay: $animation-2.5s;
+}
+.leaf:nth-child(7) {
+  top: $top2+60px;
+  animation-delay: $animation-3s;
+}
+.leaf:nth-child(8) {
+  top: $top2+70px;
+  animation-delay: $animation-3.5s;
+}
+.leaf:nth-child(9) {
+  top: $top2+80px;
+  animation-delay: $animation-5s;
+}
+.leaf:nth-child(10) {
+  top: $top2+90px;
+  animation-delay: $animation-5.5s;
+}
+.leaf:nth-child(11) {
+  top: $top2+100px;
+  animation-delay: $animation-6s;
+}
+.leaf:nth-child(12) {
+  top: $top2+110px;
+  animation-delay: $animation-6.5s;
+}
+.leaf:nth-child(13) {
+  top: $top2+120px;
+  animation-delay: $animation-7s;
+}
+.leaf:nth-child(14) {
+  top: $top2+130px;
+  animation-delay: $animation-7.5s;
+}
+.leaf:nth-child(15) {
+  top: $top2+140px;
+  animation-delay: $animation;
+}
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: $rotate1 scale(0);
+  }
+  100% {
+    transform: $rotate1 scale(1);
+  }
+}
+@keyframes leaf-even-grow {
+  0% {
+    transform: $rotate2 scale(0);
+  }
+  100% {
+    transform: $rotate2 scale(1);
+  }
+}
+
+@mixin leaf($perc, $diap, $name){
+  left: $perc;
+  transform-origin: $diap;
+  animation-name: $name;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+.leaf:nth-child(odd) { @include leaf(100%, 0% 100%, leaf-odd-grow)}
+.leaf:nth-child(even) { @include leaf(-150%, 50% 100%, leaf-even-grow)}
+
+img {
+	margin-top: -200px;
+	width: 200px;
+    animation-name: rotation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+
