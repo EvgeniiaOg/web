@@ -1,0 +1,186 @@
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 600px;
+  background-color: #E9967A;
+  gap: 400px;
+}
+
+/*подготовка полотна*/
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+.trunk {
+  position: relative;
+
+  width: 10px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+
+  width: 5px;
+}
+/*обозначение дерева (trunk) и веток (branch)*/
+
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+
+.branch {
+  position: absolute;
+
+  width: 5px;
+
+  transform-origin: bottom center;
+}
+
+/*присоединение веток к дереву*/
+
+.branch:nth-child(1) {
+  top: 180px;
+
+  height: 180px;
+}
+
+.branch:nth-child(2) {
+  top: 180px;
+
+  height: 180px;
+}
+
+.branch:nth-child(3) {
+  top: 120px;
+
+  height: 150px;
+}
+
+.branch:nth-child(4) {
+  top: 100px;
+
+  height: 150px;
+}
+
+.branch:nth-child(5) {
+  top: 80px;
+
+  height: 120px;
+}
+.branch:nth-child(6) {
+  top: 60px;
+
+  height: 120px;
+}
+/*задаем расположение первых трех веток на дереве*/
+
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #77ed9e, #53ad71);
+}
+/*рисуем листья*/
+.leaf:nth-child(1) {
+  top: 5px;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+}
+/*располагаем листья*/
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*анимация листьев*/
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+/*задаем анимацию листьям*/
+@keyframes leaf-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  99% {
+    transform: rotate(-90deg) scale(1);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1) translateY(500px);
+    top: 200px;
+    opacity: 0;
+  }
+}
+.leaf:nth-child(even) {
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+/*разделение листьев и их анимация*/
+.leaf:nth-child(1) {
+  top: 5px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+  animation-delay: 3s;
+}
+.leaf:nth-child(3) {
+  top: 50px;
+  animation-delay: 2.5s;
+}
+.leaf:nth-child(4) {
+  top: 60px;
+  animation-delay: 2s;
+}
+.leaf:nth-child(5) {
+  top: 70px;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(6) {
+  top: 90px;
+  animation-delay: 1s;
+}
+/**/
+circle {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    fill: orange;
+    stroke: orange;
+  }
+  50% {
+    transform: rotate(1turn);
+    fill: yellow;
+    stroke: yellow;
+  }
+  100% {
+    transform: rotate(2turn);
+    fill: orange;
+    stroke: orange;
+  }
+}
+/*солнце*/
