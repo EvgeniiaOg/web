@@ -1,0 +1,81 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt; 
+  background-color: #f8f8f8;
+}
+hr {
+    border: none;
+    background-color: black;
+    height: 5px; 
+   }
+ul {
+	text-align: left
+	list-style-type: upper-roman
+}
+ol {
+	list-style-image: url(punct.png);
+}
+h1 {
+	color: white;
+	font-size: 24px;
+	font-weight: 400;
+	background-color: #eaeaea;
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(228,12,154,1) 35%, rgba(0,212,255,1) 100%);
+}
+h2 {
+	color: white;
+	font-size: 20px;
+	font-weight: 400;
+	background-color: #eaeaea;
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(228,12,154,1) 35%, rgba(0,212,255,1) 100%);
+}
+h3 {
+	color #484343;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 24px;
+	text-align: left;
+
+}
+h4 {
+	color: black;
+	font-size: 18px;
+	font-weight: normal;
+	background-color: #eaeaea;
+	
+}
+[class^="box-"] {
+  background-color: skyblue;
+  /* Размещаем контейнеры по центру */
+  display: grid;
+  place-items: center;
+}
+.container {
+  display: grid;
+  gap: 20px;
+}
+  
+#box-0 {
+
+   background-color: #f8f8f8; 
+   grid-row-start: 1;
+   grid-column-start: 1;
+
+   grid-row-end: 2;
+   grid-column-end: 2;
+   
+}
+#box-1 {
+
+   background-color: #f8f8f8; 
+   grid-row-start: 1;
+   grid-column-start: 2;
+
+   grid-row-end: 2;
+   grid-column-end: 3;
+   
+}
+
+
