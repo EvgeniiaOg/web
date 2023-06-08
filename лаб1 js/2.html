@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+	<title>Лабораторная 1 №2</title>
+</head>
+<body>
+<p>Введите первое число: 
+<input type="number" name="number1" id="number1" autofocus></p>
+<div id="calculator">
+    <button id="plus" onclick="op='+'">Сложить</button>
+    <button id="minus" onclick="op='-'">Вычесть</button>
+    <button id="multiply" onclick="op='*'">Умножить</button>
+    <button id="divide" onclick="op='/'">Разделить</button>
+</div>
+<p>Введите второе число: 
+<input type="number" name="number2" id="number2" autofocus></p>
+<button onclick="func()">Посчитать</button>
+<p>Ответ: <output name="result" id="result"></output></p>
+<script>
+var op; 
+function func() {
+  var result;
+  var number1=Number(document.getElementById("number1").value);
+  var number2=Number(document.getElementById("number2").value);
+  switch (op){
+    case '+':
+      result=number1+number2;
+      break;
+    case '-':
+      result=number1-number2;
+      break;
+    case '*':
+      result=number1*number2;
+      break;
+    case '/':
+      result=number1/number2;
+      break;
+	case 'result':
+		result=result;
+	  break;}
+document.getElementById("result").innerHTML = result;}
+</script>  
+</body>
+</html>
