@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">     
+	<title>Замена отрицательных элементов массива их квадратами</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="mt-4">
+        <h1>Замена отрицательных элементов массива их квадратами</h1>
+        <button class="btn btn-primary" onclick="Negative"> Сгенерировать </button>
+        <div id="original" class="mt-2"></div>
+        <div id="result" class="mt-2"></div>
+    </div>
+</div> 
+<script>
+	<!-- function Negative() { -->
+		<!-- var arr = [2, -5, 0, 8, -3, 10, 0, -12]; -->
+		<!-- document.getElementById('original').innerHTML="Исходный массив: "+arr.join(', ');      -->
+		<!-- for (var i = 0; i < arr.length; i++) { -->
+			<!-- if (arr[i] < 0) { -->
+				<!-- arr[i] *= arr[i]; -->
+			<!-- } -->
+		<!-- } -->
+		<!-- document.getElementById('result').innerHTML="Полученный массив: "+arr.join(', '); -->
+	<!-- } -->
+		class Negative {
+		  constructor() {
+			this.arr = [2, -5, 0, 8, -3, 10, 0, -12];
+		  }
+  
+		  displayOriginal = () => {
+			document.getElementById('original').innerHTML = "Исходный массив: " + this.arr.join(', ');
+		  }
+  
+		  displayResult = () => {
+			for (let i = 0; i < this.arr.length; i++) {
+			  if (this.arr[i] < 0) {
+				this.arr[i] *= this.arr[i];
+			  }
+			}
+			document.getElementById('result').innerHTML = "Полученный массив: " + this.arr.join(', ');
+		  }
+	}
+
+// использование класса
+const negative = new Negative();
+negative.displayOriginal();
+negative.displayResult();
+</script>
+</body>
+</html>
