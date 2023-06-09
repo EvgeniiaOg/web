@@ -1,0 +1,197 @@
+.canvas {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 470px;
+  background-color: #daf7fa;
+}
+.grass {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 170px;
+  background-color: #daf7fa;
+}
+.trava {
+	margin-top: -200px;
+	width: 200px;
+    animation-name: rotation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+.trunk {
+  position: relative;
+  
+  width: 10px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+  transform-origin: bottom center;
+  width: 5px;
+}
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+.branch:nth-child(1) {
+  top: 180px;
+  height: 180px;
+}
+.branch:nth-child(2) {
+  top: 150px;
+  height: 160px;
+}
+.branch:nth-child(3) {
+  top: 130px;
+  height: 140px;
+}
+.branch:nth-child(4) {
+  top: 100px;
+  height: 120px;
+}
+.branch:nth-child(5) {
+  top: 70px;
+  height: 110px;
+}
+.branch:nth-child(6) {
+  top: 20px;
+  height: 110px;
+}
+.branch:nth-child(7) {
+  top: -20px;
+  height: 100px;
+}
+.branch:nth-child(8) {
+  top: -20px;
+  height: 70px;
+}
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #77ed9e, #53ad71);
+}
+.leaf:nth-child(1) {
+  top: 0px;
+  animation-delay: 8s;
+}
+.leaf:nth-child(2) {
+  top: 10px;
+  animation-delay: 7.5s;
+}
+.leaf:nth-child(3) {
+top: 20px;
+animation-delay: 7s;
+}
+.leaf:nth-child(4) {
+  top: 30px;
+  animation-delay: 6.5s;
+}
+.leaf:nth-child(5) {
+  top: 40px;
+  animation-delay: 6s;
+}
+.leaf:nth-child(6) {
+  top: 50px;
+  animation-delay: 5.5s;
+}
+.leaf:nth-child(7) {
+  top: 60px;
+  animation-delay: 5s;
+}
+.leaf:nth-child(8) {
+  top: 70px;
+  animation-delay: 4.5s;
+}
+.leaf:nth-child(9) {
+  top: 80px;
+  animation-delay: 3s;
+}
+.leaf:nth-child(10) {
+  top: 90px;
+  animation-delay: 2.5s;
+}
+.leaf:nth-child(11) {
+  top: 100px;
+  animation-delay: 2s;
+}
+.leaf:nth-child(12) {
+  top: 110px;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(13) {
+  top: 120px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(14) {
+  top: 130px;
+  animation-delay: 0.5s;
+}
+.leaf:nth-child(15) {
+  top: 140px;
+  animation-delay: 0s;
+}
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: rotate(-15deg) scale(0);
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);
+  }
+}
+@keyframes leaf-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+}
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+.leaf:nth-child(even) {  
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+img {
+	margin-top: -200px;
+	width: 200px;
+    animation-name: rotation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+
